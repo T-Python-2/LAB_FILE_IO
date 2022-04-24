@@ -1,0 +1,19 @@
+#LAB_FILE_IO
+
+#open the file in appending mode to create it and add as many todos as needed without overwriting it
+to_do_list_file_for_appending = open("todolist.txt","a",encoding="utf-8")
+task = ""
+
+while True:
+    task = input("Enter your task to do today (when finished, write 'exit'): ")
+    if (task == "exit"):
+        break
+    to_do_list_file_for_appending.write(task+"\n")
+
+to_do_list_file_for_appending.close()
+
+to_do_file_for_reading = open("todolist.txt","r",encoding="utf-8")
+content = to_do_file_for_reading.read()
+print(content)
+
+to_do_file_for_reading.close()
